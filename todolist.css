@@ -1,0 +1,90 @@
+body {
+  background: #ccc;
+}
+
+header {
+  background: #323123;
+  padding: 15px 0;
+  text-align: center;
+  color: #fff;
+}
+
+main {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px 50px;
+  background: #fff;
+
+  border-radius: 8px;
+}
+
+div.sumary-tasks {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+div.sumary-tasks span {
+  font-size: 14px;
+}
+
+main form {
+  display: flex;
+}
+
+main form input {
+  flex: 1;
+  padding: 10px;
+
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  box-shadow: 0px 0px 10px 0px #e2e2e2;
+}
+
+main form button {
+  padding: 10px 15px;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px 0px #e2e2e2;
+}
+
+span.errorInput-true {
+  color: red;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 14px;
+  display: block;
+}
+
+span.errorInput-false {
+  display: none;
+}
+
+li {
+  margin-top: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+label input {
+  margin-right: 10px;
+}
+
+li button {
+  color: red;
+  background: transparent;
+  border: 0;
+}
+
+span.is-done-true {
+  text-decoration: line-through;
+  color: gray;
+}

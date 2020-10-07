@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoList">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="todolist.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <title>To Do List</title>
+  </head>
+  <body>
+    <header>
+      <h1>To Do List</h1>
+    </header>
+
+    <!-- Passamos o apelido para o Controller "as" -->
+    <main ng-controller="todoListController as vm">
+      <div class="sumary-tasks">
+        <span
+          >Faltam {{vm.pendingTask()}} de {{vm.tasks.length}} tarefas a serem
+          concluídas</span
+        >
+      </div>
+
+      <!-- Ação de submeter o formulário -->
+      <form ng-submit="vm.addTask()">
+        <input
+          type="text"
+          placeholder="Digite sua tarefa a ser armazenada"
+          ng-model="vm.task"
+        />
+        <button type="submit" class="fas fa-plus"></button>
+      </form>
+      <span class="errorInput-{{vm.errorInput.status}}"
+        >{{ vm.errorInput.message }}
+      </span>
+
+      <ul>
+        <!-- dois argumentos, indice e a tarefa -->
+        <li ng-repeat="(index, task) in vm.tasks">
+          <label>
+            <!-- ng-model => o campo assinalado vai marcar true em task.done -->
+            <input type="checkbox" ng-model="task.done" />
+            <span class="is-done-{{task.done}}">{{ task.name }} </span>
+          </label>
+          <button
+            type="button"
+            class="fas fa-trash"
+            ng-click="vm.removeTask(index)"
+          ></button>
+        </li>
+      </ul>
+    </main>
+  </body>
+  <script src="todolist.js"></script>
+</html>
